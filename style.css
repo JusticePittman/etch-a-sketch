@@ -38,8 +38,5 @@ body{
 
 .grid {
     display: grid;
-}
-
-.grid-item {
     border: 1px solid black;
 }

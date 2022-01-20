@@ -72,7 +72,6 @@ function makeGrid(cells) {
         gridDiv.appendChild(gridItem);
     };
 };
-makeGrid(gridSize);
 
 gridReset.addEventListener('click', () => {window.location.reload()});
 gridResize.addEventListener('click', () => {
@@ -80,5 +79,11 @@ gridResize.addEventListener('click', () => {
     gridRedo.forEach(item => {item.style.backgroundColor = 'white';
     });
     newGridSize = parseInt(prompt("Choose grid size(1-100): ", "16"));
-    makeGrid(newGridSize);
+    if (newGridSize > 100){
+        alert("Number cannot exceed 100!");
+    }else{
+        makeGrid(newGridSize);
+    };
 });
+
+makeGrid(gridSize);

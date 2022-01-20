@@ -4,14 +4,25 @@
     box-sizing: border-box;
 }
 
+body{
+    padding: 5%;
+}
+
+.controls {
+    max-width: max-content;
+}
+
 .grid {
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
-
-    max-width: 920px;
 }
 
 .grid-item {
     border: 1px solid black;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
 }

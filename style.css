@@ -1,3 +1,12 @@
+:root {
+    --clr-red: #FF0000;
+    --clr-orange: #FF8C00;
+    --clr-yellow: #FFFF00;
+    --clr-green: #008000;
+    --clr-blue: #0000FF;
+    --clr-purple: #4B0082;
+}
+
 *,
 *::before,
 *::after {
@@ -8,8 +17,23 @@ body{
     padding: 5%;
 }
 
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
 .controls {
     max-width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.controls button {
+    height: 4.5em;
+    aspect-ratio: 1;
 }
 
 .grid {
@@ -18,11 +42,4 @@ body{
 
 .grid-item {
     border: 1px solid black;
-}
-
-.flex-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
 }

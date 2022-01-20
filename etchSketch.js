@@ -1,7 +1,9 @@
 const gridSize = 16;
 const gridDiv = document.querySelector('.grid');
 const gridReset = document.querySelector('.reset');
+const gridResize = document.querySelector('.resize');
 const colorSelect = document.querySelectorAll('.color');
+const erase = document.querySelector('.erase');
 
 
 function randomColor() {
@@ -48,6 +50,11 @@ colorSelect.forEach(color => color.addEventListener('click', () => {
                 square.style.backgroundColor = `var(${randomColor()})`;
             }));
             break;
+        case 'Eraser':
+            gridColor.forEach(square => square.addEventListener('mouseover', () => {
+                square.style.backgroundColor = `white`;
+            }));
+            break;
     }
 
 }));
@@ -65,7 +72,13 @@ function makeGrid(cells) {
         gridDiv.appendChild(gridItem);
     };
 };
+makeGrid(gridSize);
 
 gridReset.addEventListener('click', () => {window.location.reload()});
-
-makeGrid(gridSize);
+gridResize.addEventListener('click', () => {
+    const gridRedo = document.querySelectorAll('.grid-item');
+    gridRedo.forEach(item => {item.style.backgroundColor = 'white';
+    });
+    newGridSize = parseInt(prompt("Choose grid size(1-100): ", "16"));
+    makeGrid(newGridSize);
+});
